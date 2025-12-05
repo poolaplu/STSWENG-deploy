@@ -1,0 +1,376 @@
+/* viewLivelihood.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0 24px;
+    border-bottom: none;
+}
+
+.modalTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: #1f2937;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.closeButton:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.filterSection {
+    padding: 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.filterSection h4 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.filterGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ← increased min width */
+    gap: 16px;
+    align-items: end;
+}
+
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.filterInput {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 10px;
+    transition: border-color 0.2s;
+
+    /* Remove or increase this: */
+    max-width: 90%;
+    width: 90%;
+}
+
+
+.filterInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filterInputRange {
+    display: flex;
+    gap: 8px;
+}
+
+.filterInputRange .filterInput {
+    flex: 1;
+}
+
+.resetBtn {
+    padding: 8px 16px;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: fit-content;
+}
+
+.resetBtn:hover {
+    background-color: #4b5563;
+}
+
+.transactionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.resultsCount {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.addTransactionBtn {
+    padding: 8px 16px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.addTransactionBtn:hover:not(:disabled) {
+    background-color: #059669;
+}
+
+.addTransactionBtn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.modalTableContainer {
+    flex: 1;
+    overflow: auto;
+    padding: 0 24px;
+}
+
+.modalTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.modalTableHead {
+    background-color: #f9fafb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modalTableHead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.modalTableBody {
+    background-color: white;
+}
+
+.tableRow {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s;
+}
+
+.tableRow:hover {
+    background-color: #f9fafb;
+}
+
+.tableRow td {
+    padding: 12px;
+    color: #374151;
+}
+
+.newTransactionRow {
+    background-color: #fef3c7;
+    border: 2px solid #f59e0b;
+}
+
+.newTransactionRow td {
+    padding: 8px 12px;
+}
+
+.inlineInput {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.inlineInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.actionButtons {
+    display: flex;
+    gap: 8px;
+}
+
+.confirmBtn {
+    padding: 6px 8px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    min-width: 28px;
+}
+
+.confirmBtn:hover:not(:disabled) {
+    background-color: #059669;
+}
+
+.confirmBtn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.cancelBtn {
+    padding: 6px 8px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    min-width: 28px;
+}
+
+.cancelBtn:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+.removeBtn {
+    padding: 6px 12px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.removeBtn:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+.removeBtn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.noResults {
+    text-align: center;
+    padding: 48px 24px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.modalActions {
+    padding: 16px 24px;
+    border-top: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.modalButtonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.closeModalBtn {
+    padding: 8px 24px;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.closeModalBtn:hover:not(:disabled) {
+    background-color: #4b5563;
+}
+
+.closeModalBtn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .modalOverlay {
+        padding: 10px;
+    }
+
+    .modalContent {
+        max-height: 95vh;
+    }
+
+    .filterGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .transactionHeader {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .modalTableContainer {
+        padding: 0 12px;
+    }
+
+    .modalTable {
+        font-size: 12px;
+    }
+
+    .modalTableHead th,
+    .tableRow td,
+    .newTransactionRow td {
+        padding: 8px;
+    }
+}

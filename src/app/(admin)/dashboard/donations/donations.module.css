@@ -1,0 +1,363 @@
+.donationsPage {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+min-height: 500px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: var(--warm-white);
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pageTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #5d2e2e;
+  letter-spacing: -0.02em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+  color: var(--primary-maroon);
+  opacity: 0.8;
+  
+}
+
+.pageContent {
+  min-height: 500px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 0 4px 11px rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  background: var(--warm-white);
+}
+
+.filtersContainer {
+    background: var(--warm-white);
+  border-radius: 8px;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filtersGrid {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filterGroup {
+    display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0; /* Prevents overflow */
+}
+
+.filterLabel {
+    font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  margin-bottom: 0.125rem;
+}
+
+.searchInput,
+.filterSelect,
+.dateInput {
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: var(--cream-white);
+    color: var(--text-dark);
+    transition: border-color 0.2s ease;
+}
+
+.searchInput:focus,
+.filterSelect:focus,
+.dateInput:focus {
+    outline: none;
+    border-color: var(--primary-maroon);
+}
+
+.clearButton {
+    padding: 10px 16px;
+    background-color: var(--light-gray);
+    border: 2px solid var(--medium-gray);
+    border-radius: 6px;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+    background-color: var(--medium-gray);
+    border-color: var(--primary-maroon);
+}
+
+
+.resultsInfo {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+/* Donation Header */
+.donationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+
+}
+
+
+.addDonationBtn {
+  background: var(--primary-maroon);
+  color: var(--warm-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.addDonationBtn:hover:not(:disabled) {
+  background: var(--maroon-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.addDonationBtn:disabled {
+  background: var(--medium-gray);
+  color: var(--dark-gray);
+  cursor: not-allowed;
+}
+
+/* Table Styles */
+.tableContainer {
+  background: var(--warm-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.donationsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tableHead {
+  background: var(--light-gray);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tableHead th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.sortableHeader:hover {
+  background-color: var(--medium-gray);
+}
+
+.sortIcon {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--primary-maroon);
+}
+
+.tableBody {
+  background: var(--warm-white);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: var(--light-gray);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRow td {
+  padding: 1rem 0.75rem;
+  color: var(--text-dark);
+  vertical-align: middle;
+}
+
+.newDonationRow {
+  background-color: rgb(212, 242, 247);
+
+}
+
+.newDonationRow td {
+  padding: 1rem 0.75rem;
+}
+
+/* Input Styles */
+.inlineInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: var(--warm-white);
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.inlineInput:focus {
+  outline: none;
+  border-color: var(--primary-maroon);
+  box-shadow: 0 0 0 2px var(--shadow-light);
+}
+
+.disabledInput {
+  background-color: var(--light-gray) !important;
+  color: var(--dark-gray) !important;
+  cursor: not-allowed;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirmBtn {
+  background: var(--success-green);
+  color: var(--warm-white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmBtn:hover:not(:disabled) {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.confirmBtn:disabled {
+  background: var(--medium-gray);
+  color: var(--dark-gray);
+  cursor: not-allowed;
+}
+
+.cancelBtn {
+  background: var(--danger-red);
+  color: var(--warm-white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.cancelBtn:disabled {
+  background: var(--medium-gray);
+  color: var(--dark-gray);
+  cursor: not-allowed;
+}
+
+.removeBtn {
+  background: var(--danger-red);
+  color: var(--warm-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.removeBtn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--warm-white);
+  border-radius: 12px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 0 4px 16px var(--shadow-light);
+  border: 1px solid var(--border-color);
+  color: var(--dark-gray);
+  z-index: 1;
+}
+.noResults p {
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.resetFiltersBtn {
+  background: var(--primary-maroon);
+  color: var(--warm-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.resetFiltersBtn:hover {
+  background: var(--maroon-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}

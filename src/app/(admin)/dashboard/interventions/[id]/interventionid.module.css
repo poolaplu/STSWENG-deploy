@@ -1,0 +1,309 @@
+
+
+/* Main Container */
+.feedingDetailsContainer {
+    max-width: 1400px;
+    min-height: 100vh;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Program Details Card */
+.programDetailsCard {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.programDetailsCard:hover {
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+/* Program Details Card */
+.programDetailsCard {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.programDetailsCard:hover {
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.programTitle {
+    color: var(--primary-maroon);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    display: block;
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+    word-break: break-word; /* add this for extra fallback */
+    hyphens: auto;
+}
+
+.programInfoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 6fr)); /* Increased from 350px to 500px */
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.programInfoItem {
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start for better text alignment */
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.programInfoLabel {
+    font-weight: 600;
+    color: var(--dark-maroon);
+    min-width: 120px; /* Reduced from 140px to give more space to value */
+    font-size: 0.95rem;
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.programInfoValue {
+    color: var(--dark-gray);
+    font-weight: 500;
+    flex: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.5;
+    /* 🔁 Fix this line: */
+    width: 50%;
+    /* or just remove max-width entirely */
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .programInfoGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .programInfoItem {
+        flex-direction: column; /* Stack label and value vertically on mobile */
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .programInfoLabel {
+        min-width: unset; /* Remove fixed width on mobile */
+    }
+
+    .programInfoValue {
+        max-width: none; /* Remove width restriction on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .programInfoGrid {
+        gap: 0.5rem;
+    }
+
+    .programInfoItem {
+        padding: 0.5rem 0;
+        margin: 0 0 0.75rem 0;
+    }
+}
+
+/* Beneficiaries Section */
+.beneficiariesContainer {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.emptyState {
+    text-align: center;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--medium-gray);
+}
+
+.tableTitle {
+    color: var(--primary-maroon);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.addBeneficiaryBtn {
+    background: linear-gradient(135deg, var(--primary-maroon), var(--maroon-brown));
+    color: var(--warm-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.addBeneficiaryBtn:hover {
+    background: linear-gradient(135deg, var(--dark-maroon), var(--primary-maroon));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.addBeneficiaryBtn:active {
+    transform: translateY(0);
+}
+
+/* Table Styling */
+.tableWrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.beneficiariesTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--warm-white);
+    font-size: 0.9rem;
+}
+
+.tableHead {
+    background: linear-gradient(135deg, var(--primary-maroon), var(--maroon-brown));
+    color: var(--warm-white);
+}
+
+.tableHead th {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--dark-maroon);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tableBody {
+    background: var(--warm-white);
+}
+
+.tableRow {
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.tableRow:hover {
+    background-color: var(--light-gray);
+}
+
+.tableRow:nth-child(even) {
+    background-color: rgba(248, 247, 246, 0.5);
+}
+
+.tableRow:nth-child(even):hover {
+    background-color: var(--light-gray);
+}
+
+.tableCell {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    color: var(--dark-gray);
+}
+
+.memberName {
+    font-weight: 600;
+    color: rgb(142, 142, 217);
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.removeBtn {
+    background: linear-gradient(135deg, var(--danger-red), #c82333);
+    color: var(--warm-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.removeBtn:hover {
+    background: linear-gradient(135deg, #c82333, #a71e2a);
+    transform: translateY(-1px);
+}
+
+.inputField {
+    width: 90%;
+    height: 2rem;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.confirmBtn {
+    background-color: #29cb65;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.cancelBtn {
+    background-color: #992121;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    background-color: #992121;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.totalRow {
+    background-color: #f9fafb;
+    font-weight: bold;
+}
+
+.totalLabel {
+    text-align: right;
+}
+
+.totalAmount {
+    color: #059669;
+}

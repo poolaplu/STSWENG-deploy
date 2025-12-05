@@ -1,0 +1,334 @@
+.pageSection {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+min-height: 500px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: var(--warm-white);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pageTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5d2e2e;
+    letter-spacing: -0.02em;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.addButton,
+.editButton,
+.deleteButton,
+.inputLikeButton {
+    font-size: 12px;
+    padding: 1px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.addButton {
+    color: #005fcc;
+}
+
+.addButton:hover {
+    background: #e2e2e2;
+    color: #005fcc;
+}
+
+.editButton {
+    color: #07c46c;
+}
+
+.editButton:hover {
+    background: #e2e2e2;
+    color: #058448;
+}
+
+.deleteButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.deleteButton {
+    color: #cc0000;
+}
+
+.deleteButton:hover {
+    background: #e2e2e2;
+    color: #cc0000;
+}
+
+.deleteButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.previewTableWrapper {
+    margin-top: 10px;
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tableSmall {
+
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    table-layout: auto;
+}
+
+.tableSmall thead {
+    background: #f9fafb;
+}
+
+.tableSmall th {
+    padding: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f9fafb;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tableSmall td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #edf2f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.tableSmall tbody tr {
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.tableSmall tbody tr:hover {
+    background: #d3edff;
+}
+
+.selectedRow {
+    background-color: #84d4ff !important;
+}
+
+.nameCell {
+    cursor: pointer;
+    color: #0070f3;
+    text-decoration: underline;
+    font-weight: 500;
+    min-width: 110px;
+}
+
+.inputLikeButton:focus {
+    border: 1.5px solid #1565c0;
+}
+
+.filterDropdown {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    width: 250px;
+    backdrop-filter: blur(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.filterDropdown label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1px;
+    font-size: 14px;
+}
+
+.filterDropdown input[type="checkbox"] {
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.filterDropdown select {
+    width: 100%;
+    padding: 2px 2px;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 4px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.filterDropdown select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+.filterDropdown label:last-child {
+    margin-bottom: 0;
+}
+
+.filterIconButton {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.filterIconButton:hover .filterIcon {
+    transform: scale(1.1);
+}
+
+.paginationWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.paginationButton {
+    background: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.paginationButton:hover:not(:disabled) {
+    background: #334155;
+    transform: translateY(-2px);
+}
+
+.paginationButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.paginationText {
+    color: #6b7280;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+.filtersContainer {
+    background: var(--warm-white);
+  border-radius: 8px;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filtersGrid {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filterGroup {
+    display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0; /* Prevents overflow */
+}
+
+.filterLabel {
+    font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  margin-bottom: 0.125rem;
+}
+
+.searchInput,
+.filterSelect,
+.dateInput {
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: var(--cream-white);
+    color: var(--text-dark);
+    transition: border-color 0.2s ease;
+}
+
+.searchInput:focus,
+.filterSelect:focus,
+.dateInput:focus {
+    outline: none;
+    border-color: var(--primary-maroon);
+}
+
+.clearButton {
+    padding: 10px 16px;
+    background-color: var(--light-gray);
+    border: 2px solid var(--medium-gray);
+    border-radius: 6px;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+    background-color: var(--medium-gray);
+    border-color: var(--primary-maroon);
+}
+
+
+.resultsInfo {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+.memberHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  margin-bottom: 0.5rem;
+
+}

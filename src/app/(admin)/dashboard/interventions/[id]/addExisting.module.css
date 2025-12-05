@@ -1,0 +1,569 @@
+/* Modal Styling - Scaled down by 15% */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(154, 154, 154, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 3.4rem; /* Reduced from 4rem */
+    backdrop-filter: blur(2px);
+}
+
+.modalContent {
+    background: var(--warm-white);
+    border-radius: 13.6px; /* Reduced from 16px */
+    padding: 1.275rem; /* Reduced from 1.5rem */
+    max-width: 1190px; /* Reduced from 1400px */
+    max-height: 90.75vh; /* Reduced from 95vh */
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalTitle {
+    color: var(--primary-maroon);
+    font-size: 1.275rem; /* Reduced from 1.5rem */
+    font-weight: 700;
+    margin: 0 0 0.85rem 0; /* Reduced from 1rem */
+    padding-bottom: 0.425rem; /* Reduced from 0.5rem */
+    border-bottom: 2px solid var(--primary-maroon);
+}
+
+/* Filter Section - Scaled down by 15% */
+.filterSection {
+    background: var(--light-gray);
+    padding: 0.85rem; /* Reduced from 1rem */
+    border-radius: 6.8px; /* Reduced from 8px */
+    margin-bottom: 0.85rem; /* Reduced from 1rem */
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px 2px var(--shadow-light);
+}
+
+.filterSection h4 {
+    margin: 0 0 0.6375rem 0; /* Reduced from 0.75rem */
+    color: var(--primary-maroon);
+    font-size: 0.85rem; /* Reduced from 1rem */
+    font-weight: 600;
+}
+
+.filterGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(153px, 1fr)); /* Reduced from 180px */
+    gap: 0.6375rem; /* Reduced from 0.75rem */
+    align-items: end;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterLabel {
+    display: block;
+    margin-bottom: 0.2125rem; /* Reduced from 0.25rem */
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    font-weight: 600;
+
+    color: var(--dark-maroon);
+}
+
+.filterInput {
+    width: 100%;
+    padding: 0.425rem; /* Reduced from 0.5rem */
+    border: 1px solid var(--border-color);
+    border-radius: 5.1px; /* Reduced from 6px */
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    transition: all 0.3s ease;
+    background: var(--warm-white);
+}
+
+.filterInput:focus {
+    outline: none;
+    border-color: var(--primary-maroon);
+    box-shadow: 0 0 0 2px rgba(93, 46, 46, 0.1);
+}
+
+.filterInputRange {
+    display: flex;
+    gap: 0.2125rem; /* Reduced from 0.25rem */
+}
+
+.filterInputRange input {
+    flex: 1;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.425rem; /* Reduced from 0.5rem */
+    cursor: pointer;
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    font-weight: 500;
+    color: var(--dark-maroon);
+    padding: 0.2125rem 0; /* Reduced from 0.25rem */
+}
+
+.checkboxInput {
+    cursor: pointer;
+    width: 13.6px; /* Reduced from 16px */
+    height: 13.6px; /* Reduced from 16px */
+    accent-color: var(--primary-maroon);
+}
+
+.resetBtn {
+    padding: 0.425rem 0.85rem; /* Reduced from 0.5rem 1rem */
+    background: linear-gradient(135deg, var(--dark-gray), #555);
+    color: var(--warm-white);
+    border: none;
+    border-radius: 5.1px; /* Reduced from 6px */
+    cursor: pointer;
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+}
+
+.resetBtn:hover {
+    background: linear-gradient(135deg, #555, #444);
+    transform: translateY(-1px);
+}
+
+/* Results Count - Scaled down by 15% */
+.resultsCount {
+    margin-bottom: 0.6375rem; /* Reduced from 0.75rem */
+    color: var(--dark-gray);
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    font-weight: 500;
+    padding: 0.425rem 0.6375rem; /* Reduced from 0.5rem 0.75rem */
+    background: var(--light-gray);
+    border-radius: 5.1px; /* Reduced from 6px */
+    border: 1px solid var(--border-color);
+}
+
+/* Modal Table - Scaled down by 15% */
+.modalTableContainer {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6.8px; /* Reduced from 8px */
+    margin-bottom: 0.85rem; /* Reduced from 1rem */
+    min-height: 230px; /* Reduced from 300px */
+}
+
+.modalTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    background: var(--warm-white);
+}
+
+.modalTableHead {
+    background: linear-gradient(135deg, var(--primary-maroon), var(--maroon-brown));
+    color: var(--warm-white);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modalTableHead th {
+    padding: 0.51rem 0.425rem; /* Reduced from 0.6rem 0.5rem */
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.6375rem; /* Reduced from 0.75rem */
+    letter-spacing: 0.255px; /* Reduced from 0.3px */
+    border-bottom: 1px solid var(--dark-maroon);
+    white-space: nowrap;
+}
+
+.modalTableBody tr {
+    border-bottom: 1px solid var(--medium-gray);
+    transition: background-color 0.2s ease;
+    height: 34px; /* Reduced from 40px */
+}
+
+.modalTableBody tr:hover {
+    background-color: var(--light-gray);
+}
+
+.modalTableBody tr:nth-child(even) {
+    background-color: rgba(248, 247, 246, 0.3);
+}
+
+.modalTableBody td {
+    padding: 0.425rem 0.425rem; /* Reduced from 0.5rem 0.5rem */
+    vertical-align: middle;
+    color: var(--dark-gray);
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 127.5px; /* Reduced from 150px */
+}
+
+.memberInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1275rem; /* Reduced from 0.15rem */
+    min-width: 102px; /* Reduced from 120px */
+}
+
+.memberMainName {
+    font-weight: 600;
+    color: var(--primary-maroon);
+    font-size: 0.68rem; /* Reduced from 0.8rem */
+}
+
+.memberSubInfo {
+    font-size: 0.595rem; /* Reduced from 0.7rem */
+    color: var(--dark-gray);
+    opacity: 0.8;
+}
+
+.addSingleBtn {
+    padding: 0.34rem 0.68rem; /* Reduced from 0.4rem 0.8rem */
+    background: linear-gradient(135deg, var(--primary-maroon), var(--maroon-brown));
+    color: var(--warm-white);
+    border: none;
+    border-radius: 3.4px; /* Reduced from 4px */
+    cursor: pointer;
+    font-size: 0.6375rem; /* Reduced from 0.75rem */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 51px; /* Reduced from 60px */
+}
+
+.addSingleBtn:hover {
+    background: linear-gradient(135deg, var(--dark-maroon), var(--primary-maroon));
+    transform: translateY(-1px);
+}
+
+/* No Results Message - Scaled down by 15% */
+.noResults {
+    text-align: center;
+    padding: 1.7rem; /* Reduced from 2rem */
+    color: var(--dark-gray);
+    font-size: 0.765rem; /* Reduced from 0.9rem */
+    background: var(--light-gray);
+    border-radius: 6.8px; /* Reduced from 8px */
+    margin: 0.85rem 0; /* Reduced from 1rem */
+}
+
+/* Modal Actions - Scaled down by 15% */
+.modalActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.85rem; /* Reduced from 1rem */
+    margin-top: 0.85rem; /* Reduced from 1rem */
+    padding-top: 0.85rem; /* Reduced from 1rem */
+    border-top: 1px solid var(--medium-gray);
+}
+
+.selectedCount {
+    font-size: 0.7225rem; /* Reduced from 0.85rem */
+    color: var(--dark-maroon);
+    font-weight: 600;
+}
+
+.modalButtonGroup {
+    display: flex;
+    gap: 0.6375rem; /* Reduced from 0.75rem */
+}
+
+.addSelectedBtn {
+    padding: 0.51rem 1.275rem; /* Reduced from 0.6rem 1.5rem */
+    background: linear-gradient(135deg, var(--success-green), #228a3f);
+    color: var(--warm-white);
+    border: none;
+    border-radius: 5.1px; /* Reduced from 6px */
+    cursor: pointer;
+    font-size: 0.7225rem; /* Reduced from 0.85rem */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.addSelectedBtn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #228a3f, #1e7e34);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.addSelectedBtn:disabled {
+    background: var(--dark-gray);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+.closeModalBtn {
+    padding: 0.51rem 1.275rem; /* Reduced from 0.6rem 1.5rem */
+    background: linear-gradient(135deg, var(--dark-gray), #555);
+    color: var(--warm-white);
+    border: none;
+    border-radius: 5.1px; /* Reduced from 6px */
+    cursor: pointer;
+    font-size: 0.7225rem; /* Reduced from 0.85rem */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.closeModalBtn:hover {
+    background: linear-gradient(135deg, #555, #444);
+    transform: translateY(-1px);
+}
+
+/* Selection Mode Toggle - Scaled down by 15% */
+.selectionModeToggle {
+    display: flex;
+    align-items: center;
+    gap: 0.6375rem; /* Reduced from 0.75rem */
+    margin-bottom: 0.85rem; /* Reduced from 1rem */
+    padding: 0.6375rem; /* Reduced from 0.75rem */
+    background: var(--light-gray);
+    border-radius: 5.1px; /* Reduced from 6px */
+    border: 1px solid var(--border-color);
+}
+
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 35.7px; /* Reduced from 42px */
+    height: 17px; /* Reduced from 20px */
+}
+
+.toggleSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-gray);
+    transition: 0.4s;
+    border-radius: 17px; /* Reduced from 20px */
+}
+
+.toggleSlider:before {
+    position: absolute;
+    content: "";
+    height: 13.6px; /* Reduced from 16px */
+    width: 13.6px; /* Reduced from 16px */
+    left: 1.7px; /* Reduced from 2px */
+    bottom: 1.7px; /* Reduced from 2px */
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggleInput:checked + .toggleSlider {
+    background-color: var(--primary-maroon);
+}
+
+.toggleInput:checked + .toggleSlider:before {
+    transform: translateX(18.7px); /* Reduced from 22px */
+}
+
+.toggleInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggleLabel {
+    font-weight: 600;
+    color: var(--dark-maroon);
+    font-size: 0.7225rem; /* Reduced from 0.85rem */
+}
+
+/* Responsive Design - Updated for scaled modal */
+@media (max-width: 768px) {
+    .feedingDetailsContainer {
+        padding: 1rem;
+    }
+
+    .programDetailsCard,
+    .beneficiariesContainer {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .programTitle {
+        font-size: 1.75rem;
+    }
+
+    .programInfoGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tableHeader {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .modalContent {
+        padding: 0.85rem; /* Reduced from 1rem */
+        margin: 0.425rem; /* Reduced from 0.5rem */
+        max-height: 83.3vh; /* Reduced from 98vh */
+    }
+
+    .modalTitle {
+        font-size: 1.0625rem; /* Reduced from 1.25rem */
+    }
+
+    .filterGrid {
+        grid-template-columns: repeat(auto-fit, minmax(119px, 1fr)); /* Reduced from 140px */
+        gap: 0.425rem; /* Reduced from 0.5rem */
+    }
+
+    .modalActions {
+        flex-direction: column;
+        gap: 0.6375rem; /* Reduced from 0.75rem */
+    }
+
+    .modalButtonGroup {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .addSelectedBtn,
+    .closeModalBtn {
+        flex: 1;
+        min-width: 85px; /* Reduced from 100px */
+    }
+
+    .modalTableHead th {
+        padding: 0.425rem 0.2125rem; /* Reduced from 0.5rem 0.25rem */
+        font-size: 0.595rem; /* Reduced from 0.7rem */
+    }
+
+    .modalTableBody td {
+        padding: 0.34rem 0.2125rem; /* Reduced from 0.4rem 0.25rem */
+        font-size: 0.6375rem; /* Reduced from 0.75rem */
+        max-width: 85px; /* Reduced from 100px */
+    }
+}
+
+@media (max-width: 480px) {
+    .measurementInputs {
+        flex-direction: column;
+    }
+
+    .measurementInput {
+        width: 100%;
+    }
+
+    .filterInputRange {
+        flex-direction: column;
+        gap: 0.2125rem; /* Reduced from 0.25rem */
+    }
+
+    .filterGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .modalTableHead th {
+        padding: 0.34rem 0.17rem; /* Reduced from 0.4rem 0.2rem */
+        font-size: 0.5525rem; /* Reduced from 0.65rem */
+    }
+
+    .modalTableBody td {
+        padding: 0.255rem 0.17rem; /* Reduced from 0.3rem 0.2rem */
+        font-size: 0.595rem; /* Reduced from 0.7rem */
+        max-width: 68px; /* Reduced from 80px */
+    }
+
+    .memberInfo {
+        min-width: 76.5px; /* Reduced from 90px */
+    }
+
+    .addSingleBtn {
+        padding: 0.255rem 0.51rem; /* Reduced from 0.3rem 0.6rem */
+        font-size: 0.595rem; /* Reduced from 0.7rem */
+        min-width: 42.5px; /* Reduced from 50px */
+    }
+}
+
+/* Responsive adjustments for remarks */
+@media (max-width: 1200px) {
+    .remarksContainer {
+        min-width: 100px;
+    }
+
+    .periodLabel {
+        font-size: 0.7rem;
+    }
+
+    .bmiValue {
+        font-size: 0.8rem;
+    }
+
+    .bmiCategory {
+        font-size: 0.7rem;
+        padding: 1px 4px;
+    }
+}
+
+/* Optional: Compact view for smaller screens */
+@media (max-width: 768px) {
+    .remarksContainer {
+        gap: 4px;
+    }
+
+    .remarksPeriod {
+        padding: 2px 4px;
+        gap: 1px;
+    }
+
+    .periodLabel {
+        font-size: 0.65rem;
+    }
+
+    .bmiValue {
+        font-size: 0.75rem;
+    }
+
+    .bmiCategory {
+        font-size: 0.65rem;
+        padding: 1px 3px;
+    }
+}
+
+.beneficiaryTypeSelection {
+    margin-bottom: 1rem;
+}
+
+.typeButtonGroup {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.typeButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.typeButton:hover {
+    background: #f5f5f5;
+}
+
+.activeTypeButton {
+    background: #4f0b0b;
+    color: white;
+    border-color: #430d0d;
+}

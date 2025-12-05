@@ -1,0 +1,215 @@
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.modalBox {
+    width: 700px;
+    height: 600px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modalHeader {
+    flex-shrink: 0;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: #c00;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 4px;
+}
+
+.tab,
+.activeTab {
+    flex: 1;
+    padding: 10px 0;
+    background: #f0f0f0;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.tab:hover,
+.tab:focus-visible {
+    background: #e0eaff;
+    color: #434343;
+}
+
+.activeTab {
+    font-weight: 600;
+    background: #fff;
+    border-bottom: 3px solid #ff7149;
+    color: #ab3440;
+}
+
+.modalBody {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.modalContent {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.modalFooter {
+    flex-shrink: 0;
+    padding: 16px;
+    border-top: 1px solid #ccc;
+    background: #fafafa;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.inputField,
+.infoNotesBox {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.infoNotesBox {
+    min-height: 80px;
+    max-height: 160px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.infoLabel {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.interventionList {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.interventionItem {
+    padding: 10px 12px;
+    background: #f8f9fb;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    cursor: default;
+}
+
+.interventionItem:hover {
+    background: #e0eaff;
+}
+
+.suggestionsList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 4px 0;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(5px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.suggestionsList.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.suggestionItem {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.suggestionItem:hover {
+    background: #e0eaff;
+}
+
+.saveButton,
+.cancelButton {
+    flex: 1;
+    max-width: 120px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.saveButton {
+    background: #decc9c;
+    color: white;
+}
+
+.cancelButton {
+    background: #f9c2c2;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .modalBox {
+        width: 95vw;
+        max-height: 95vh;
+    }
+}

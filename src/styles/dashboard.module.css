@@ -1,0 +1,81 @@
+/* dashboard.module.css */
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--off-white);
+    animation: fadeInUp 0.4s ease-out;
+    overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;    
+  overflow-y: scroll;
+  padding: 24px;
+}
+
+
+.content {
+    padding: 24px;
+}
+    
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .main {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        margin-left: 200px; /* Smaller sidebar width on tablets */
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        margin-left: 180px; /* Even smaller sidebar width on mobile */
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .button,
+    .buttonSecondary {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}

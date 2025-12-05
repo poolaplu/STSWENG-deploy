@@ -1,0 +1,41 @@
+.editorWrapper {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.toolbar button {
+  border: none;
+  background: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.toolbar button:hover {
+  background: #eee;
+}
+
+.toolbar button.active {
+  background: #116530;
+  color: white;
+}
+
+.editorContent {
+  padding: 10px;
+  min-height: 250px;
+}
+
+.editorContent:focus {
+  outline: none;
+}

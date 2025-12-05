@@ -1,0 +1,362 @@
+/* members_modal.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalBox {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.modalHeader {
+    background: #652f30;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.closeButton {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 40px;
+}
+
+.tabs {
+    display: flex;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tab,
+.activeTab {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
+.tab {
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.activeTab {
+    color: #652f30;
+    background: white;
+    border-bottom: 2px solid #652f30;
+    font-weight: 600;
+}
+
+.modalBody {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modalContent {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formGroup label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.required::after {
+    content: "*";
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.inputField {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: white;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #652f30;
+    box-shadow: 0 0 0 3px rgba(101, 47, 48, 0.1);
+}
+
+.inputField:invalid {
+    border-color: #ef4444;
+}
+
+.inputField::placeholder {
+    color: #9ca3af;
+}
+
+.textArea {
+    min-height: 60px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.notesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.notesGroup {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.notesGroup textarea {
+    flex: 1;
+    min-height: 0;
+}
+
+.notesGroup label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.sensitiveNotesHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.toggleButton {
+    background: #652f30;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toggleButton:hover {
+    background: #7a3838;
+}
+
+.infoSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.infoItem {
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.infoItem.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.infoLabel {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.infoValue {
+    font-size: 14px;
+    color: #111827;
+    font-weight: 400;
+}
+
+.interventionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.interventionItem {
+    background: #f9fafb;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.interventionItem strong {
+    color: #652f30;
+}
+
+.modalFooter {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    flex-shrink: 0;
+}
+
+.saveButton {
+    background: #652f30;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 80px;
+}
+
+.saveButton:hover {
+    background: #7a3838;
+}
+
+.cancelButton {
+    background: white;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 80px;
+}
+
+.cancelButton:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.errorMessage {
+    background: #fef2f2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #fecaca;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modalBox {
+        width: 95%;
+        margin: 20px;
+        max-height: 90vh;
+    }
+
+    .modalContent {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .infoSection {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .modalFooter {
+        flex-direction: column-reverse;
+    }
+
+    .saveButton,
+    .cancelButton {
+        width: 100%;
+    }
+}
